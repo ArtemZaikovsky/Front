@@ -1,0 +1,100 @@
+server:
+  port: 4445
+
+base_url: http://localhost:4444
+
+tax_system_url: api/taxsystem
+
+company_url: api/company
+
+currency_url: api/currency
+
+bank_account_url: api/bank/account
+
+contractor_group_url: api/contractor/group
+
+contractor_url: api/contractor
+
+role_url: api/role
+
+attribute_calculation_object_url: api/attribute/calculation/object
+
+contract_url: api/contract
+
+department_url: api/department
+
+employee_url: api/employee
+
+image_url: api/image
+
+legal_detail_url: api/legaldetail
+
+position_url: api/position
+
+product_group_url: api/productgroup
+
+product_url: api/product
+
+type_of_contractor_url: api/typeofcontractor
+
+type_of_price_url: api/typeofprice
+
+unit_url: api/unit
+
+warehouse_url: api/warehouse
+
+invoice_url: api/invoice
+
+invoice_product_url: api/invoice/product
+
+authentication_url: login
+
+project_url: api/project
+
+payment_url: api/payment
+
+retail_stores_url: api/retail_stores
+
+contractor_status_url: api/contractor_status
+
+task_url: api/tasks
+
+task_comment_url: api/task_comments
+
+technical_card_url: api/technical_card
+
+technical_card_group_url: api/technical_card_group
+
+remain_url: api/remain
+
+supplier_account_url: api/supplierAccount
+
+address_url: api/address
+
+return_supplier_url: api/returnToSupplier
+
+correction_url: api/correction
+
+correction_product_url: api/correction/product
+
+price_list_url: api/priceList
+
+moneySubCashFlowUrl_url: api/money
+
+balance_adjustment_url: api/balanceAdjustment
+
+inventarization_url: api/inventarization
+
+inventarization_product_url: api/inventarization/product
+
+internal_order_url: api/internalorder
+
+internal_order_product_url:  api/internalorder/product
+
+payout_url:  api/payout
+
+acceptance_url: api/acceptance
+
+acceptance_product_url: api/acceptance/product
+
+#debug: true

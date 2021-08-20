@@ -1,0 +1,8 @@
+[part~="row"]:hover [part~="body-cell"] {
+    color: black;
+    background-color: #f1f4ff;
+}
+
+:host(.treeGreed) [part~="cell"] ::slotted(vaadin-grid-cell-content){
+    padding-right: 0;
+}

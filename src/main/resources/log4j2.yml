@@ -1,0 +1,62 @@
+Configutation:
+  status: error
+  name: LogPropertiesConfig
+
+  Properties:
+    property:
+      - name: home_log_path
+        value: logs
+      - name: archive_log_path
+        value: ${home_log_path}/archive
+      - name: service_log_path
+        value: ${home_log_path}/service
+      - name: today
+        value: "yyyy-MM-dd"
+      - name: console_pattern_layout
+        value: "%d{ISO8601} %-5p [%c{3}] [%t] %m%n"
+      - name: file_pattern_layout
+        value: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+
+  Appenders:
+
+    Console:
+      PatternLayout:
+        pattern: ${console_pattern_layout}
+      name: console_appender
+      target: SYSTEM_OUT
+
+    File:
+      PatternLayout:
+        pattern: ${file_pattern_layout}
+      fileName: ${service_log_path}/service_log_file.log
+      name: file_appender
+
+    RollingFile:
+      DefaultRolloverStrategy:
+        max: '15'
+      PatternLayout:
+        pattern: ${file_pattern_layout}
+      Policies:
+        SizeBasedTriggeringPolicy:
+          size: 1KB
+      fileName: ${archive_log_path}/rolling_file.log
+      filePattern: ${archive_log_path}/rolling_file.log.%d{${today}-hh-mm}.gz
+      name: rolling_file_appender
+
+  Loggers:
+    Logger:
+      additivity: false
+      AppenderRef:
+        - level: debug
+          ref: console_appender
+        - level: error
+          ref: file_appender
+        - level: debug
+          ref: rolling_file_appender
+      level: debug
+      name: com.trade_accounting.services.impl
+
+    Root:
+      appenderRef:
+        ref: console_appender
+      level: error
